@@ -2,7 +2,31 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
 }
+@font-face {
+  font-family: Tazugane;
+  src: url(https://static-assets.bamgrid.com/fonts/tazugane/TazuganeInfo-Book-v4.e7ec92b7a6c5443e5bfb9492195ba16a.woff2);
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Tazugane;
+  src: url(https://static-assets.bamgrid.com/fonts/tazugane/TazuganeInfo-Medium-v4.fc000b0b48bcde210f082c08b7279b25.woff2);
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Tazugane;
+  src: url(https://static-assets.bamgrid.com/fonts/tazugane/TazuganeInfo-Book-v4.e7ec92b7a6c5443e5bfb9492195ba16a.woff2);
+  font-weight: 400;
+  font-style: normal;
+  font-display: optional;
+}
+
 body {
+  font-family: "Tazugane", sans-serif;
   background: #090b13;
 }

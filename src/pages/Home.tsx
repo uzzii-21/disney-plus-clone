@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import homeBg from "assets/images/home-background.png";
 import { ImgSlider, Viewers } from "components";
+import Movies from "components/Movies/Movies";
 
 const Container = styled.main`
   min-height: calc(100vh - 70px);
@@ -14,8 +15,8 @@ const Container = styled.main`
     position: absolute;
     top: 0;
     left: 0;
-    min-height: calc(100vh - 70px);
-    width: 100vw;
+    right: 0;
+    bottom: 0;
     z-index: -1;
   }
 `;
@@ -25,6 +26,10 @@ function Home() {
     <Container>
       <ImgSlider />
       <Viewers />
+      <Movies />
+      <Movies />
+
+      <Movies />
     </Container>
   );
 }
