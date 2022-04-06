@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Link = styled.a`
+  text-decoration: none;
   display: flex;
   align-items: center;
   padding: 0 12px;

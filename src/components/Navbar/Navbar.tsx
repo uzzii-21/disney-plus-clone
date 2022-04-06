@@ -9,19 +9,36 @@ import watchListIcon from "assets/images/watchlist-icon.svg";
 import originalIcon from "assets/images/original-icon.svg";
 import moviesIcon from "assets/images/movie-icon.svg";
 import seriesIcon from "assets/images/series-icon.svg";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Nav = Styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 70px;
-  background: #090b13;
+  z-index: 4;
   display: flex;
   align-items: center;
   padding: 0 36px;
-  overflow-x: hidden;
+  transition: all .3s ease-out;
+
+  & > a {
+    width: 108px;
+    height: auto;
+    max-height: 70px;
+    padding: 0 14px;
+    display: inline-block;
+    margin-right: auto;
+  }
   `;
 
 const Logo = Styled.img`
-  width: 80px;
-  `;
+  display: block;
+  width: 100%;
+  height: auto;
+`;
 
 const NavMenu = Styled.nav`
   display: flex;
@@ -30,9 +47,32 @@ const NavMenu = Styled.nav`
 `;
 
 function Navbar() {
+  const [navbar, setNavbar] = useState(false);
+
+  const changeBackground = () => {
+    console.log(window.scrollY);
+    if (window.scrollY >= 100) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeBackground);
+  });
+
   return (
-    <Nav className="App">
-      <Logo src={logo} />
+    <Nav
+      style={
+        navbar
+          ? { backgroundColor: "#090b13" }
+          : { backgroundColor: "transparent" }
+      }
+    >
+      <Link to="/">
+        <Logo src={logo} />
+      </Link>
       <NavMenu>
         <NavLink linkText="HOME" linkIcon={homeIcon} />
         <NavLink linkText="SEARCH" linkIcon={SearchIcon} />

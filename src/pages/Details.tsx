@@ -5,8 +5,7 @@ import addIcon from "assets/images/add.svg";
 import groupIcon from "assets/images/group-icon.png";
 
 const Container = styled.main`
-  min-height: calc(100vh - 70px);
-  padding: 0 calc(3.5vw + 5px);
+  padding: calc(3.5vw + 5px);
   position: relative;
 `;
 
