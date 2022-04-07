@@ -3,10 +3,16 @@ import playIcon from "assets/images/play-icon-black.png";
 import playIconWhite from "assets/images/play-icon-white.png";
 import addIcon from "assets/images/add.svg";
 import groupIcon from "assets/images/group-icon.png";
+import { useLocation } from "react-router-dom";
+import { MovieProp } from "db";
 
 const Container = styled.main`
   padding: calc(3.5vw + 5px);
+  height: 100vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Background = styled.div`
@@ -21,20 +27,17 @@ const Background = styled.div`
   img {
     width: 100%;
     height: 100%;
-    object-fill: cover;
+    object-fit: cover;
   }
 `;
 
 const ImageTitle = styled.div`
-  height: 30vh;
-  min-height: 170px;
-  width: 35vw;
-  min-width: 200px;
-
+  margin-bottom: 30px;
   img {
-    width: 100%;
-    height: 100%;
-    object-fill: contain;
+    max-width: 600px;
+    min-width: 200px;
+    width: 35vw;
+    object-fit: contain;
   }
 `;
 
@@ -55,14 +58,34 @@ const PlayButton = styled.button`
   letter-spacing: 1.8px;
   cursor: pointer;
 
+  @media (max-width: 768px) {
+    height: 45px;
+    padding: 0px 12px;
+    font-size: 12px;
+    margin: 0px 10px 0px 0px;
+  }
+
   &:hover {
     background: rgb(198, 198, 198);
+  }
+  span {
+    color: black;
+  }
+  img {
+    width: 32px;
+    @media (max-width: 768px) {
+      width: 25px;
+    }
   }
 `;
 const TrailerButton = styled(PlayButton)`
   background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgb(249, 249, 249);
   color: rgb(249, 249, 249);
+
+  span {
+    color: white;
+  }
 `;
 const AddButton = styled.button`
   margin-right: 16px;
@@ -85,51 +108,59 @@ const GroupWatchButton = styled(AddButton)`
 `;
 
 const SubTitle = styled.h1`
-  font-size: 16px;
+  font-size: 22px;
   color: rgb(249, 249, 249);
   margin-top: 26px;
+  @media (max-width: 768px) {
+    width: 100%;
+    font-size: 18px;
+  }
 `;
 const Description = styled.p`
   line-height: 1.5;
   font-size: 20px;
   margin-top: 16px;
+  max-width: 874px;
   color: rgb(249, 249, 249);
+  @media (max-width: 768px) {
+    width: 100%;
+    font-size: 16px;
+  }
 `;
 
 function Details() {
+  const {
+    state: { movieDetails },
+  } = useLocation();
+
   return (
     <Container>
       <Background>
-        <img src="" alt="" />
+        <img src={movieDetails.background} alt={movieDetails.slug} />
       </Background>
       <ImageTitle>
-        <img src="" alt="" />
+        <img src={movieDetails.titleImg} alt={movieDetails.slug} />
       </ImageTitle>
 
       <Controls>
         <PlayButton>
-          <img src={playIcon} alt="" />
+          <img src={playIcon} alt="playIcon" />
           <span>PLAY</span>
         </PlayButton>
         <TrailerButton>
-          <img src={playIconWhite} alt="" />
+          <img src={playIconWhite} alt="playIconWhite" />
           <span>TRAILER</span>
         </TrailerButton>
 
         <AddButton>
-          <img src={addIcon} alt="" />
+          <img src={addIcon} alt="addIcon" />
         </AddButton>
         <GroupWatchButton>
-          <img src={groupIcon} alt="" />
+          <img src={groupIcon} alt="groupIcon" />
         </GroupWatchButton>
       </Controls>
-      <SubTitle>2015 • 1h 35m • Coming of Age, Family, Animation</SubTitle>
-      <Description>
-        When 11-year-old Riley moves to a new city, her Emotions team up to help
-        her through the transition. Joy, Fear, Anger, Disgust and Sadness work
-        together, but when Joy and Sadness get lost, they must journey through
-        unfamiliar places to get back home.
-      </Description>
+      <SubTitle>{movieDetails.subTitle}</SubTitle>
+      <Description>{movieDetails.description}</Description>
     </Container>
   );
 }

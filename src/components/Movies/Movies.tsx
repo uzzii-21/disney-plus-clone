@@ -1,4 +1,11 @@
+import { MovieProp } from "db";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+interface IProps {
+  title: string;
+  movieList: MovieProp[];
+}
 
 const Container = styled.section`
   padding: 0px 0px 26px;
@@ -22,7 +29,7 @@ const Content = styled.div`
   }
 `;
 
-const Wrap = styled.div`
+const Wrap = styled(Link)`
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
@@ -45,35 +52,20 @@ const Wrap = styled.div`
   }
 `;
 
-function Movies() {
+function Movies({ movieList, title }: IProps) {
   return (
     <Container>
-      <h2>Recommended for you</h2>
+      <h2>{title}</h2>
       <Content>
-        <Wrap>
-          <img
-            src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/87F1DCF36049558159913ADFD18A800DE1121771540033EC3A7651B8FE154CEB/scale?width=400&aspectRatio=1.78&format=jpeg"
-            alt=""
-          />
-        </Wrap>
-        <Wrap>
-          <img
-            src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/87F1DCF36049558159913ADFD18A800DE1121771540033EC3A7651B8FE154CEB/scale?width=400&aspectRatio=1.78&format=jpeg"
-            alt=""
-          />
-        </Wrap>
-        <Wrap>
-          <img
-            src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/87F1DCF36049558159913ADFD18A800DE1121771540033EC3A7651B8FE154CEB/scale?width=400&aspectRatio=1.78&format=jpeg"
-            alt=""
-          />
-        </Wrap>
-        <Wrap>
-          <img
-            src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/87F1DCF36049558159913ADFD18A800DE1121771540033EC3A7651B8FE154CEB/scale?width=400&aspectRatio=1.78&format=jpeg"
-            alt=""
-          />
-        </Wrap>
+        {movieList.map((movie) => (
+          <Wrap
+            to={`/details/${movie.slug}`}
+            state={{ movieDetails: movie }}
+            key={movie.slug}
+          >
+            <img src={movie.thumbnail} alt={movie.slug} />
+          </Wrap>
+        ))}
       </Content>
     </Container>
   );
