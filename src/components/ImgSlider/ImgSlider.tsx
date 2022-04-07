@@ -76,16 +76,16 @@ function ImgSlider() {
   return (
     <Carousel {...settings}>
       <Wrap>
-        <img src={img1} alt="" />
+        <img src={img1} alt="slider 1" />
       </Wrap>
       <Wrap>
-        <img src={img2} alt="" />
+        <img src={img2} alt="slider 2" />
       </Wrap>
       <Wrap>
-        <img src={img3} alt="" />
+        <img src={img3} alt="slider 3" />
       </Wrap>
       <Wrap>
-        <img src={img4} alt="" />
+        <img src={img4} alt="slider 4" />
       </Wrap>
     </Carousel>
   );

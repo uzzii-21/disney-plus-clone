@@ -70,7 +70,7 @@ function Navbar() {
       }
     >
       <Link to="/">
-        <Logo src={logo} />
+        <Logo src={logo} alt="logo" />
       </Link>
       <NavMenu>
         <NavLink linkText="HOME" linkIcon={homeIcon} />

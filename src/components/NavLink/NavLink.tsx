@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
-const Link = styled.a`
-  text-decoration: none;
+const Link = styled.button`
   display: flex;
   align-items: center;
   padding: 0 12px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 
   img {
     height: 20px;
@@ -44,8 +47,8 @@ interface IProps {
 
 function NavLink({ linkText, linkIcon }: IProps) {
   return (
-    <Link href="">
-      <img src={linkIcon} alt="homeIcon" />
+    <Link>
+      <img src={linkIcon} alt={linkText} />
       <span>{linkText}</span>
     </Link>
   );

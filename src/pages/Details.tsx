@@ -4,7 +4,6 @@ import playIconWhite from "assets/images/play-icon-white.png";
 import addIcon from "assets/images/add.svg";
 import groupIcon from "assets/images/group-icon.png";
 import { useLocation } from "react-router-dom";
-import { MovieProp } from "db";
 
 const Container = styled.main`
   padding: calc(3.5vw + 5px);
@@ -101,6 +100,15 @@ const AddButton = styled.button`
   background: rgba(0, 0, 0, 0.6);
   img {
     margin: 7px;
+  }
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    img {
+      margin: 5px;
+    }
   }
 `;
 const GroupWatchButton = styled(AddButton)`
