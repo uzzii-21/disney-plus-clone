@@ -4,7 +4,7 @@ import { ImgSlider, Viewers } from "components";
 import Movies from "components/Movies/Movies";
 
 const Container = styled.main`
-  padding: calc(3.5vw + 5px);
+  padding: 70px calc(3.5vw + 5px);
   position: relative;
   overflow-x: hidden;
 

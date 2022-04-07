@@ -8,12 +8,14 @@ const Link = styled.a`
 
   img {
     height: 20px;
+    margin-right: 7px;
   }
 
   span {
     font-size: 14px;
     color: white;
     position: relative;
+    letter-spacing: 1.5px;
 
     &:after {
       transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;

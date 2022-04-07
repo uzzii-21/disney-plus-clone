@@ -12,7 +12,16 @@ const Container = styled.section`
   padding: 30px 0 26px;
   display: grid;
   grid-gap: 25px;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 0px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 `;
 
 const Wrap = styled.div`
@@ -22,6 +31,7 @@ const Wrap = styled.div`
   box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
     rgb(0 0 0 / 73%) 0px 16px 10px -10px;
   transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+
   &:hover {
     box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px,
       rgb(0 0 0 / 72%) 0px 30px 22px -10px;
@@ -49,6 +59,9 @@ function Viewers() {
       </Wrap>
       <Wrap>
         <img src={img4} alt="" />
+      </Wrap>
+      <Wrap>
+        <img src={img5} alt="" />
       </Wrap>
       <Wrap>
         <img src={img5} alt="" />

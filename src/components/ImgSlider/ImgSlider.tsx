@@ -10,15 +10,26 @@ import img3 from "assets/images/slider-scale.jpg";
 import img4 from "assets/images/slider-scales.jpg";
 
 const Carousel = styled(Slider)`
-  margin-top: 20px;
-
   ul li button {
     &:before {
       font-size: 10px;
       color: rgb(150, 158, 171);
     }
   }
+  .slick-slider {
+    position: relative;
+  }
 
+  .slick-dots {
+    bottom: 30px;
+    right: 30px;
+    width: auto;
+
+    @media (max-width: 1024px) {
+      bottom: 20px;
+      right: 20px;
+    }
+  }
   li.slick-active button::before {
     color: white;
   }
@@ -33,15 +44,24 @@ const Carousel = styled(Slider)`
 `;
 const Wrap = styled.div`
   cursor: pointer;
+  height: 477px;
   outline: none;
   img {
+    object-fit: cover;
     border: 4px solid transparent;
-    border-radius: 4px;
+    border-radius: 10px;
     width: 100%;
     height: 100%;
     box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
       rgb(0 0 0 / 73%) 0px 16px 10px -10px;
     transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  }
+
+  @media (max-width: 1024px) {
+    height: 380px;
+  }
+  @media (max-width: 768px) {
+    height: 200px;
   }
 `;
 
