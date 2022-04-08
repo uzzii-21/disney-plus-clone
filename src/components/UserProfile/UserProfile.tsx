@@ -14,15 +14,16 @@ const ProfileImg = styled.img`
   border-radius: 50%;
   cursor: pointer;
 `;
-
-function UserProfile() {
+interface IProps {
+  name: string;
+  imgURL: string;
+  logout: () => void;
+}
+function UserProfile({ name, imgURL, logout }: IProps) {
   return (
     <Avatar>
-      <span>Uzair</span>
-      <ProfileImg
-        src="https://yt3.ggpht.com/ytc/AKedOLRbdv3Di8paQyrgMF_VwFXPkhwVzcW59Vgo8dTsyw=s88-c-k-c0x00ffffff-no-rj"
-        alt=""
-      />
+      <span>{name}</span>
+      <ProfileImg onClick={logout} src={imgURL} alt={name} />
     </Avatar>
   );
 }

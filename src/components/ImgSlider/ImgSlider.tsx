@@ -41,6 +41,9 @@ const Carousel = styled(Slider)`
   .slick-active img {
     border: 4px solid rgba(249, 249, 249, 0.8);
   }
+  .slick-arrow {
+    opacity: 0;
+  }
 `;
 const Wrap = styled.div`
   cursor: pointer;
@@ -72,6 +75,7 @@ function ImgSlider() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
   };
   return (
     <Carousel {...settings}>
