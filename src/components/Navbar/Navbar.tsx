@@ -12,8 +12,8 @@ import originalIcon from "assets/images/original-icon.svg";
 import moviesIcon from "assets/images/movie-icon.svg";
 import seriesIcon from "assets/images/series-icon.svg";
 import { signInWithPopup, signOut } from "firebase/auth";
-import { auth, provider } from "../../firebase.config";
-import { AuthContext } from "../../context/AuthProvider";
+import { auth, provider } from "firebase.config";
+import { AuthContext } from "context/AuthProvider";
 
 const Nav = Styled.header`
   position: fixed;

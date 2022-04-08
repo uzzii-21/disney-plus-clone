@@ -4,9 +4,9 @@ import Home from "pages/Home";
 import LogIn from "pages/LogIn";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
-import { AuthContext } from "./context/AuthProvider";
+import { AuthContext } from "context/AuthProvider";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebase.config";
+import { auth } from "firebase.config";
 
 function App() {
   const { authState, setAuthState } = useContext(AuthContext);

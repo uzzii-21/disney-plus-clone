@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import homeBg from "assets/images/home-background.png";
-import { ImgSlider, Viewers } from "components";
-import Movies from "components/Movies/Movies";
+import { ImgSlider, Viewers, Movies } from "components";
 import { moviesData } from "../db";
 
 const Container = styled.main`

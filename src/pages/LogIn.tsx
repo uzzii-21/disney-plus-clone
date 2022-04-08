@@ -3,6 +3,10 @@ import homeBg from "assets/images/login.jpg";
 import homeBgSm from "assets/images/sm-login.jpg";
 
 import logo from "assets/images/logo.svg";
+import { signInWithPopup } from "firebase/auth";
+import { auth, provider } from "firebase.config";
+import { AuthContext } from "context/AuthProvider";
+import { useContext } from "react";
 
 const Container = styled.main`
   position: relative;
@@ -75,13 +79,24 @@ const Wrap = styled.section`
 `;
 
 function LogIn() {
+  const { setAuthState } = useContext(AuthContext);
+
+  const signInWithGoogle = async () => {
+    try {
+      const res = await signInWithPopup(auth, provider);
+      const { user } = await res;
+      setAuthState({ name: user.displayName, photo: user.photoURL });
+    } catch (err: any) {
+      console.error(err);
+    }
+  };
   return (
     <Container>
       <Wrap>
         <img src={logo} alt="Logo" />
         <h1>Everything you love + never would've expected</h1>
         <p>Login required.</p>
-        <button>LOG IN NOW</button>
+        <button onClick={signInWithGoogle}>LOG IN NOW</button>
       </Wrap>
     </Container>
   );

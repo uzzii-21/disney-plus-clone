@@ -139,7 +139,7 @@ const Description = styled.p`
 function Details() {
   const {
     state: { movieDetails },
-  } = useLocation();
+  }: any = useLocation();
 
   return (
     <Container>
