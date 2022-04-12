@@ -2,7 +2,9 @@
  
 Disney plus clone made with React.js, typescript,, contextAPI and Firebase
 
-![](./design/01.jpg)
+[**Live Demo**](https://disney-clone-uzzii-21.netlify.app/)  
+
+![](./design/01.png)
 ![](./design/02.png)
 ![](./design/03.png)
 
