@@ -2,8 +2,6 @@
  
 Disney plus clone made with React.js, typescript,, contextAPI and Firebase
 
-![demo](https://github.com/uzzii-21/disney-plus-clone/blob/main/design/01.png)
-
 ![](./design/01.jpg)
 ![](./design/02.png)
 ![](./design/03.png)
@@ -15,7 +13,7 @@ Built with:
 - [React router](https://reactrouter.com/docs/en/v6/getting-started/overview)
 - [Slick carousel](https://kenwheeler.github.io/slick/)
 - [Firebase](https://www.firebase.com/)
-- 
+
 
 ## Getting Started
 
